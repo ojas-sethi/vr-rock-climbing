@@ -27,7 +27,7 @@ public class NetworkConnect : MonoBehaviour
 		Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxConnection);
 		string newJoinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
 		textMeshProUGUI.text = newJoinCode;
-		Debug.Log(newJoinCode);
+		//Debug.Log(newJoinCode);
 		
 		transport.SetHostRelayData(allocation.RelayServer.IpV4,(ushort) allocation.RelayServer.Port, allocation.AllocationIdBytes, allocation.Key, allocation.ConnectionData);
 		
@@ -49,11 +49,4 @@ public class NetworkConnect : MonoBehaviour
 		NetworkManager.Singleton.StartClient();
 	}
 	
-	void Update()
-	{
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			Create();
-		}
-	}
 }
