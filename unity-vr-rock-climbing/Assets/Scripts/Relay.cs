@@ -1,10 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
-<<<<<<< Updated upstream
-=======
 using System;
 using System.Text;
->>>>>>> Stashed changes
 using UnityEngine;
 using Unity.Services.Core;
 using Unity.Services.Authentication;
@@ -14,24 +11,14 @@ using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using Unity.Networking.Transport.Relay;
 
-<<<<<<< Updated upstream
-=======
 using Unity.Services.Lobbies;
 using Unity.Services.Lobbies.Models;
 
->>>>>>> Stashed changes
+
 public class Relay : MonoBehaviour
 {
 	[SerializeField]
 	private short maxPlayers = 4;
-<<<<<<< Updated upstream
-	private string joinCode;
-	public TMPro.TextMeshProUGUI textMeshProUGUI;
-
-	private async void Start()
-	{
-		await UnityServices.InitializeAsync();
-=======
 	public string joinCode = "Hi";
 	public TMPro.TextMeshProUGUI textMeshProUGUI;
 	
@@ -52,7 +39,6 @@ public class Relay : MonoBehaviour
 		var authProfile = new InitializationOptions().SetProfile(randomUserId);
 		
 		await UnityServices.InitializeAsync(authProfile);
->>>>>>> Stashed changes
 
 		AuthenticationService.Instance.SignedIn += () =>
 		{
@@ -71,17 +57,11 @@ public class Relay : MonoBehaviour
 			Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxPlayers-1); // takes number of connections allowed as argument. you can add a region argument
 
 			joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-<<<<<<< Updated upstream
-			textMeshProUGUI.text = joinCode;
-=======
 			textMeshProUGUI.text = "Hosting: " + joinCode;
->>>>>>> Stashed changes
 			Debug.Log(joinCode);
 
 			RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
 			NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
-<<<<<<< Updated upstream
-=======
 			
 			
 			CreateLobbyOptions lobbyOptions = new CreateLobbyOptions();
@@ -92,7 +72,7 @@ public class Relay : MonoBehaviour
 			
 			currentLobby = await Lobbies.Instance.CreateLobbyAsync("Lobby Name", maxPlayers, lobbyOptions);
 			
->>>>>>> Stashed changes
+
 
 			NetworkManager.Singleton.StartHost();
 		} 
@@ -102,14 +82,6 @@ public class Relay : MonoBehaviour
 		}
 	}
 
-<<<<<<< Updated upstream
-	public async void JoinRelay(string joinCode)
-	{
-		try
-		{
-			Debug.Log("Joining Relay with " + joinCode);
-			JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(joinCode);
-=======
 	public async void JoinRelay()
 	{
 		try
@@ -125,7 +97,6 @@ public class Relay : MonoBehaviour
 			
 			Debug.Log("Joining Relay with " + joinCode);
 			JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(lobbyJoinCode);
->>>>>>> Stashed changes
 
 			RelayServerData relayServerData = new RelayServerData(joinAllocation, "dtls");
 			NetworkManager.Singleton.GetComponent<UnityTransport>().SetRelayServerData(relayServerData);
@@ -135,11 +106,8 @@ public class Relay : MonoBehaviour
 		catch (RelayServiceException e)
 		{
 			Debug.LogError(e.Message);
-<<<<<<< Updated upstream
-=======
 			//joinCCode.text = "testing error";
 			//joinCCode.text = e.Message + "\n";
->>>>>>> Stashed changes
 		}
 	}
 }
