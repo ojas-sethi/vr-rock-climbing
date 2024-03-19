@@ -635,7 +635,11 @@ GameObject:
   - component: {fileID: 3092964992376445162}
   - component: {fileID: 1194197581852799961}
   - component: {fileID: 7532431872269173074}
+<<<<<<< Updated upstream
   - component: {fileID: 2079166025695854469}
+=======
+  - component: {fileID: 4779347916096258009}
+>>>>>>> Stashed changes
   m_Layer: 0
   m_Name: Avatar
   m_TagString: Untagged
@@ -674,7 +678,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream
   GlobalObjectIdHash: 951099334
+=======
+  GlobalObjectIdHash: 4017365259
+>>>>>>> Stashed changes
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -712,7 +720,11 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+<<<<<<< Updated upstream
 --- !u!114 &2079166025695854469
+=======
+--- !u!114 &4779347916096258009
+>>>>>>> Stashed changes
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -721,6 +733,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6658213156577130757}
   m_Enabled: 1
   m_EditorHideFlags: 0
+<<<<<<< Updated upstream
   m_Script: {fileID: 11500000, guid: e615821c28b3cec40bcfc974d0ca901e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -731,3 +744,13 @@ MonoBehaviour:
   avatarHeadPositionOffset: {x: 0, y: 0, z: -0.14}
   avatarHeadRotationOffset: {x: 0, y: 0, z: 0, w: 0}
   avatarBodyPositionOffset: {x: 0, y: -0.35, z: 0}
+=======
+  m_Script: {fileID: 11500000, guid: 24d5b79b9cc86ec4fb34701ba209c97c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  root: {fileID: 3092964992376445162}
+  head: {fileID: 1318743354195746969}
+  leftHand: {fileID: 2708783182865499316}
+  rightHand: {fileID: 450698314465593592}
+  meshToDisable: []
+>>>>>>> Stashed changes

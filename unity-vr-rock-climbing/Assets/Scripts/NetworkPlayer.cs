@@ -6,7 +6,11 @@ using Unity.Netcode;
 public class NetworkPlayer : NetworkBehaviour
 {
 	public Transform root;
+<<<<<<< Updated upstream
 	//public Transform head;
+=======
+	public Transform head;
+>>>>>>> Stashed changes
 	public Transform leftHand;
 	public Transform rightHand;
 	
@@ -33,8 +37,13 @@ public class NetworkPlayer : NetworkBehaviour
 			root.position = VRRigReferences.Singleton.root.position;
 			root.rotation = VRRigReferences.Singleton.root.rotation;
 			
+<<<<<<< Updated upstream
 			//head.position = VRRigReferences.Singleton.head.position;
 			//head.rotation = VRRigReferences.Singleton.head.rotation;
+=======
+			head.position = VRRigReferences.Singleton.head.position;
+			head.rotation = VRRigReferences.Singleton.head.rotation;
+>>>>>>> Stashed changes
 			
 			leftHand.position = VRRigReferences.Singleton.leftHand.position;
 			leftHand.rotation = VRRigReferences.Singleton.leftHand.rotation;
