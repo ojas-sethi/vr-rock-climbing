@@ -6,70 +6,71 @@ public class CoinSpawner : MonoBehaviour
     // Prefab for the coin object
     public GameObject coinPrefab; // Assign in inspector
 
-    // Parent GameObject of the climbing wall
-    public Transform climbingWall; // Assign in inspector
+    // Parent GameObjects of the climbing walls
+    public Transform[] climbingWalls; // Assign in inspector
 
-    // Maximum number of coins that can be spawned
-    public int maxCoins = 10;
+    // Maximum number of coins that can be spawned per wall
+    public int maxCoinsPerWall = 10;
 
-    // Time between spawns
+    // Base spawn interval for coins
     public float baseSpawnInterval = 5f;
 
-    // Size of the area where coins can spawn
-    public Vector3 spawnAreaSize = new Vector3(5, 5, 5); // TODO: Adjust based on the size of the wall
+    // Randomized range for fluctuating spawn intervals
+    public Vector2 spawnIntervalRange = new Vector2(2f, 5f);
 
-    // Current number of spawned coins
-    private int currentCoins = 0;
+    // Number of spawn areas (climbing walls)
+    private int numSpawnAreas;
 
     // Start is called before the first frame update
     private void Start()
     {
-        // Start spawning coins
-        StartCoroutine(SpawnCoinsRoutine());
+        numSpawnAreas = climbingWalls.Length;
+        // Start spawning coins for each spawn area
+        for (int i = 0; i < numSpawnAreas; i++)
+        {
+            StartCoroutine(SpawnCoinsRoutine(i));
+        }
     }
 
-    // Coroutine for spawning coins at regular intervals
-    private IEnumerator SpawnCoinsRoutine()
+    // Coroutine for spawning coins at regular intervals for a specific spawn area
+    private IEnumerator SpawnCoinsRoutine(int wallIndex)
     {
-        while (currentCoins < maxCoins)
+        while (true)
         {
-            // Spawn a coin
-            SpawnCoin();
+            // Randomly select spawn interval within the specified range
+            float spawnInterval = Random.Range(spawnIntervalRange.x, spawnIntervalRange.y);
 
-            // Calculate next spawn interval based on current number of coins and base spawn interval
-            float spawnInterval = baseSpawnInterval / (currentCoins + 1);
+            // Spawn coins at regular intervals
+            for (int i = 0; i < maxCoinsPerWall; i++)
+            {
+                SpawnCoin(wallIndex);
+                yield return new WaitForSeconds(spawnInterval);
+            }
 
-            // Wait for the specified interval before spawning the next coin
-            yield return new WaitForSeconds(spawnInterval);
+            // Wait for a random interval before resuming spawning
+            yield return new WaitForSeconds(Random.Range(spawnInterval * 2, spawnInterval * 3));
         }
     }
 
     // Spawn a single coin at a random position within the spawn area
-    private void SpawnCoin()
+    private void SpawnCoin(int wallIndex)
     {
-        // If the maximum number of coins has been reached, stop spawning
-        if (currentCoins >= maxCoins)
-        {
-            return;
-        }
-
-        // Calculate a random position within the spawn area
+        // Calculate a random position within the spawn area of the specified wall
         Vector3 randomPosition = new Vector3(
-            Random.Range(-spawnAreaSize.x / 2, spawnAreaSize.x / 2),
-            Random.Range(-spawnAreaSize.y / 2, spawnAreaSize.y / 2),
-            Random.Range(-spawnAreaSize.z / 2, spawnAreaSize.z / 2)
-        ) + climbingWall.position; // Adjust position based on the climbing wall's position
+            Random.Range(-climbingWalls[wallIndex].localScale.x / 2, climbingWalls[wallIndex].localScale.x / 2),
+            Random.Range(-climbingWalls[wallIndex].localScale.y / 2, climbingWalls[wallIndex].localScale.y / 2),
+            Random.Range(-climbingWalls[wallIndex].localScale.z / 2, climbingWalls[wallIndex].localScale.z / 2)
+        ) + climbingWalls[wallIndex].position;
 
-        // Instantiate a coin at the calculated position, as a child of the climbing wall
-        if (coinPrefab != null && climbingWall != null)
+        // Instantiate a coin at the calculated position, as a child of the specified climbing wall
+        if (coinPrefab != null)
         {
-            Instantiate(coinPrefab, randomPosition, Quaternion.identity, climbingWall);
-            currentCoins++; // Increment the count of spawned coins
+            Instantiate(coinPrefab, randomPosition, Quaternion.identity, climbingWalls[wallIndex]);
         }
         else
         {
-            // Log an error if either the coinPrefab or climbingWall is not assigned
-            Debug.LogError("Coin prefab or climbing wall is not assigned.");
+            // Log an error if the coinPrefab is not assigned
+            Debug.LogError("Coin prefab is not assigned.");
         }
     }
 }
