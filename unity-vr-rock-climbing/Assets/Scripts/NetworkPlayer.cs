@@ -10,6 +10,9 @@ public class NetworkPlayer : NetworkBehaviour
 	public Transform leftHand;
 	public Transform rightHand;
 	
+	//
+	public Transform gun;
+	
 	public Renderer[] meshToDisable;
 	
     // Start is called before the first frame update
@@ -41,6 +44,9 @@ public class NetworkPlayer : NetworkBehaviour
 			
 			rightHand.position = VRRigReferences.Singleton.rightHand.position;
 			rightHand.rotation = VRRigReferences.Singleton.rightHand.rotation;
+			
+			gun.position = VRRigReferences.Singleton.rightHand.position;
+			gun.rotation = VRRigReferences.Singleton.rightHand.rotation;
 		}
     }
 }

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.Netcode.Components;
+using Unity.Netcode;
 
 public class ConvertToHandle : MonoBehaviour
 {
@@ -15,10 +17,14 @@ public class ConvertToHandle : MonoBehaviour
 			//Transform position = contact.point;
 			Vector3 colPos = contact.point;
 			GameObject spawnedHandle = Instantiate(handle);
+			
 			//spawnedHandle.transform.position =  col.transform.position;
 			spawnedHandle.transform.position =  colPos;
 			//Instantiate(handle, position, rotation);
 			Destroy(gameObject);
+			
+			var instanceNetworkObject = spawnedHandle.GetComponent<NetworkObject>();
+			instanceNetworkObject.Spawn();
 		}
 	}
 }

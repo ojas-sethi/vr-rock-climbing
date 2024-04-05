@@ -9,6 +9,8 @@ public class ButtonFunctions : MonoBehaviour
 
 	private string joinCode;
 	public TMPro.TMP_InputField inputTextMeshPro;
+	
+	//public GameObject gun;
 
 	private TouchScreenKeyboard keyboard;
 
@@ -26,6 +28,9 @@ public class ButtonFunctions : MonoBehaviour
 	{
 		print("Hosted");
 		relay.AllocateRelay();
+		//GameObject spawnedGun = Instantiate(gun);
+		//var instanceNetworkObject = spawnedGun.GetComponent<NetworkObject>();
+		//instanceNetworkObject.Spawn();
 	}
 	public void Client()
 	{
