@@ -2,28 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.InputSystem;
 
 public class FireBulletOnActivate : MonoBehaviour
 {
 	public GameObject bullet;
 	public Transform spawnPoint;
 	public float fireSpeed = 20;
+	public InputActionProperty fire;
 	
     // Start is called before the first frame update
     void Start()
     {
-		XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
-		grabbable.activated.AddListener(FireBullet);
+		//XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
+		//gun.activated.AddListener(FireBullet);
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (fire.action.WasPressedThisFrame()) {
+			FireBullet();
+		}
     }
 	
-	public void FireBullet(ActivateEventArgs arg)
+	public void FireBullet()//ActivateEventArgs arg)
 	{
 		GameObject spawnedBullet = Instantiate(bullet);
 		spawnedBullet.transform.position = spawnPoint.position;

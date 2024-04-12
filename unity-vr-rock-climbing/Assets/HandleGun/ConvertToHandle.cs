@@ -15,16 +15,21 @@ public class ConvertToHandle : MonoBehaviour
 			ContactPoint contact = col.contacts[0];
 			//Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
 			//Transform position = contact.point;
-			Vector3 colPos = contact.point;
-			GameObject spawnedHandle = Instantiate(handle);
+			//Vector3 colPos = contact.point;
+			SpawnHandleRpc(contact.point);
 			
-			//spawnedHandle.transform.position =  col.transform.position;
-			spawnedHandle.transform.position =  colPos;
-			//Instantiate(handle, position, rotation);
-			Destroy(gameObject);
-			
-			var instanceNetworkObject = spawnedHandle.GetComponent<NetworkObject>();
-			instanceNetworkObject.Spawn();
 		}
+	}
+
+	[ServerRpc]
+	private void SpawnHandleRpc(Vector3 colPos)
+	{
+		GameObject spawnedHandle = Instantiate(handle);
+		//spawnedHandle.transform.position =  col.transform.position;
+		spawnedHandle.transform.position =  colPos;
+		//Instantiate(handle, position, rotation);
+		Destroy(gameObject);		
+		var instanceNetworkObject = spawnedHandle.GetComponent<NetworkObject>();
+		instanceNetworkObject.Spawn();
 	}
 }
