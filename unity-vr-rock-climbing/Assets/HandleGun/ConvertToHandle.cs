@@ -4,7 +4,7 @@ using UnityEngine;
 using Unity.Netcode.Components;
 using Unity.Netcode;
 
-public class ConvertToHandle : MonoBehaviour
+public class ConvertToHandle : NetworkBehaviour
 {
 	public GameObject handle;
     void OnCollisionEnter(Collision col)
@@ -16,13 +16,15 @@ public class ConvertToHandle : MonoBehaviour
 			//Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
 			//Transform position = contact.point;
 			//Vector3 colPos = contact.point;
-			SpawnHandleRpc(contact.point);
-			
+			if(IsOwner)
+			{
+				SpawnHandleServerRpc(contact.point);
+			}
 		}
 	}
 
 	[ServerRpc]
-	private void SpawnHandleRpc(Vector3 colPos)
+	private void SpawnHandleServerRpc( Vector3 colPos)
 	{
 		GameObject spawnedHandle = Instantiate(handle);
 		//spawnedHandle.transform.position =  col.transform.position;

@@ -5,7 +5,8 @@ using UnityEngine.InputSystem;
 
 public class ContinuousMovementPhysics : MonoBehaviour
 {
-    public float speed = 1;
+    public float walkSpeed = 1;
+    public float sprintSpeed = 2;
     public float turnSpeed = 60;
     public float jumpHeight = 1.5f;
 
@@ -20,6 +21,7 @@ public class ContinuousMovementPhysics : MonoBehaviour
     public InputActionProperty moveInputSource;
     public InputActionProperty turnInputSource;
     public InputActionProperty jumpInputSource;
+    public InputActionProperty sprintInputSource;
 
     public Rigidbody rb;
     public Rigidbody leftHandRB;
@@ -36,6 +38,7 @@ public class ContinuousMovementPhysics : MonoBehaviour
     private Vector2 inputMoveAxis;
     private float inputTurnAxis;
     private bool isGrounded;
+    private float speed;
 
     // Update is called once per frame
     void Update()
@@ -45,6 +48,7 @@ public class ContinuousMovementPhysics : MonoBehaviour
 
         bool inputJump = jumpInputSource.action.WasPressedThisFrame();
 
+/*
         if (!jumpWithHand)
         {
             if (inputJump && isGrounded)
@@ -64,6 +68,24 @@ public class ContinuousMovementPhysics : MonoBehaviour
                 rb.velocity = Vector3.up * Mathf.Clamp(handSpeed, minJumpWithHandSpeed, maxJumpWithHandSpeed);
             }
         }
+*/
+        bool inputJumpPressed = jumpInputSource.action.IsPressed();
+
+        float handSpeed = ((leftHandRB.velocity - rb.velocity).magnitude + (rightHandRB.velocity - rb.velocity).magnitude) / 2;
+
+        if (inputJumpPressed && isGrounded )
+        {
+            if (handSpeed > minJumpWithHandSpeed)
+            {
+                rb.velocity = Vector3.up * Mathf.Clamp(handSpeed, minJumpWithHandSpeed, maxJumpWithHandSpeed);
+            }
+            else
+            {
+                jumpVelocity = Mathf.Sqrt(2 * -Physics.gravity.y * jumpHeight);
+                rb.velocity += Vector3.up * jumpVelocity;
+            }
+        }
+
     }
 
     private void FixedUpdate()
@@ -72,6 +94,16 @@ public class ContinuousMovementPhysics : MonoBehaviour
 
         if (!onlyMoveIfGrounded || (onlyMoveIfGrounded && isGrounded))
         {
+
+            if (sprintInputSource.action.IsPressed())
+            {
+                speed = sprintSpeed;
+            }
+            else
+            {
+                speed = walkSpeed;
+            }
+
             Quaternion yaw = Quaternion.Euler(0, directionSource.eulerAngles.y, 0);
             Vector3 direction = yaw * new Vector3(inputMoveAxis.x, 0, inputMoveAxis.y);
 
