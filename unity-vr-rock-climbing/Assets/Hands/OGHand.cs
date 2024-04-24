@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
-public class Hand :  MonoBehaviour
+public class OGHand :  MonoBehaviour
 {
     //Stores handPrefab to be Instantiated
     public GameObject handPrefab;
