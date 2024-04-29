@@ -8,10 +8,13 @@ using Unity.Netcode;
 
 public class FireBulletOnActivate : NetworkBehaviour
 {
-	public GameObject bullet;
+	public GameObject mBullet;
+	public GameObject sBullet;
 	public Transform spawnPoint;
 	public float fireSpeed = 20;
 	public InputActionProperty fire;
+	public bool Shared = true;
+	public NetworkVariable<bool> Shared_net = new NetworkVariable<bool>();
 	
     // Start is called before the first frame update
     void Start()
@@ -25,7 +28,17 @@ public class FireBulletOnActivate : NetworkBehaviour
     void Update()
     {
         if (IsOwner && fire.action.WasPressedThisFrame()) {
-			FireBulletServerRpc(spawnPoint.position, spawnPoint.forward);
+			//GetComponent<hapticOnFire>().fireHaptic();
+			Debug.Log(Shared);
+			if (Shared_net.Value)
+			{
+				FireBulletServerRpc(spawnPoint.position, spawnPoint.forward);
+			}
+			else
+			{
+				FireBullet(spawnPoint.position, spawnPoint.forward);
+			}
+			
 		}
     }
 	
@@ -38,15 +51,33 @@ public class FireBulletOnActivate : NetworkBehaviour
 	//}
 
 	[ServerRpc(RequireOwnership = false)]
-	private void FireBulletServerRpc(Vector3 bulletPosition, Vector3 gunForward)
+	private void FireBulletServerRpc(Vector3 bulletPosition, Vector3 gunForward)//, ServerRpcParams serverRpcParams = default)
 	{
-		GameObject spawnedBullet = Instantiate(bullet);
+		//var clientId = serverRpcParams.Receive.SenderClientId;
+		//Debug.Log(clientId);
+		GameObject spawnedBullet = Instantiate(mBullet);
 		spawnedBullet.transform.position = bulletPosition;
+		//spawnedBullet.GetComponent<ConvertToHandle>().bulletOwner = (int) clientId;
 		spawnedBullet.GetComponent<Rigidbody>().isKinematic = false;
 		spawnedBullet.GetComponent<Rigidbody>().velocity = gunForward * fireSpeed;
 		Destroy(spawnedBullet, 5);
 		//Destroy(gameObject);		
 		var instanceNetworkObject = spawnedBullet.GetComponent<NetworkObject>();
 		instanceNetworkObject.Spawn();
+	}
+
+	private void FireBullet(Vector3 bulletPosition, Vector3 gunForward)
+	{
+		GameObject spawnedBullet = Instantiate(sBullet);
+		spawnedBullet.transform.position = bulletPosition;
+		spawnedBullet.GetComponent<Rigidbody>().isKinematic = false;
+		spawnedBullet.GetComponent<Rigidbody>().velocity = gunForward * fireSpeed;
+		Destroy(spawnedBullet, 5);
+		//Destroy(gameObject);		
+	}
+
+	public void changeMode(bool mode)
+	{
+		Shared = mode;
 	}
 }

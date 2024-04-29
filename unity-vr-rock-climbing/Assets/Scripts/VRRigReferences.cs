@@ -8,6 +8,7 @@ public class VRRigReferences : MonoBehaviour
 	
 	public Transform root;
 	public Transform head;
+	public Transform body;
 	public Transform leftHand;
 	public Transform rightHand;
 	

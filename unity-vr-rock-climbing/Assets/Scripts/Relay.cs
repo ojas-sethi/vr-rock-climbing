@@ -20,7 +20,7 @@ public class Relay : MonoBehaviour
 	[SerializeField]
 	private short maxPlayers = 4;
 	public string joinCode = "Hi";
-	//public TMPro.TextMeshProUGUI textMeshProUGUI;
+	public TMPro.TextMeshProUGUI textMeshProUGUI;
 	
 	private Lobby currentLobby;
 
@@ -57,7 +57,7 @@ public class Relay : MonoBehaviour
 			Allocation allocation = await RelayService.Instance.CreateAllocationAsync(maxPlayers-1); // takes number of connections allowed as argument. you can add a region argument
 
 			joinCode = await RelayService.Instance.GetJoinCodeAsync(allocation.AllocationId);
-			//textMeshProUGUI.text = "Hosting: " + joinCode;
+			textMeshProUGUI.text = "Hosting: " + joinCode;
 			Debug.Log(joinCode);
 
 			RelayServerData relayServerData = new RelayServerData(allocation, "dtls");
@@ -93,7 +93,7 @@ public class Relay : MonoBehaviour
 			Debug.Log(currentLobby.Data["JOIN_CODE"].Value);
 			
 			string lobbyJoinCode = currentLobby.Data["JOIN_CODE"].Value;
-			//textMeshProUGUI.text = "Joining: " + lobbyJoinCode;
+			textMeshProUGUI.text = "Joining: " + lobbyJoinCode;
 			
 			Debug.Log("Joining Relay with " + joinCode);
 			JoinAllocation joinAllocation = await RelayService.Instance.JoinAllocationAsync(lobbyJoinCode);

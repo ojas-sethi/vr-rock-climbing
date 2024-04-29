@@ -8,7 +8,7 @@ public class ButtonFunctions : MonoBehaviour
 	public Relay relay;
 
 	private string joinCode;
-	public TMPro.TMP_InputField inputTextMeshPro;
+	//public TMPro.TMP_InputField inputTextMeshPro;
 	
 	//public GameObject gun;
 
@@ -19,10 +19,10 @@ public class ButtonFunctions : MonoBehaviour
 		keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
 	}
 
-	public void ClientInput()
-	{
-		joinCode = inputTextMeshPro.text;
-	}
+	//public void ClientInput()
+	//{
+		//joinCode = inputTextMeshPro.text;
+	//}
 
 	public void Host()
 	{
@@ -36,5 +36,27 @@ public class ButtonFunctions : MonoBehaviour
 	{
 		print("Joined as Client");
 		relay.JoinRelay();
+	}
+
+	public void DestroyHolds()
+	{
+		GameObject[] gos = GameObject.FindGameObjectsWithTag("Destroyable");
+		foreach(GameObject go in gos)
+     		Destroy(go);
+	}
+
+
+	public void setGunToSinglePlayer()
+	{
+		GameObject[] gos = GameObject.FindGameObjectsWithTag("netPlayer");
+		foreach(GameObject go in gos)
+			go.GetComponent<ChangeModes>().setToSinglePlayer();
+	}
+
+	public void setGunToMultiPlayer()
+	{
+		GameObject[] gos = GameObject.FindGameObjectsWithTag("netPlayer");
+		foreach(GameObject go in gos)
+			go.GetComponent<ChangeModes>().setToMultiPlayer();
 	}
 }

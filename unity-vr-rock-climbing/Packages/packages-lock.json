@@ -1,15 +1,5 @@
 {
   "dependencies": {
-    "com.unity.animation.rigging": {
-      "version": "1.2.1",
-      "depth": 0,
-      "source": "registry",
-      "dependencies": {
-        "com.unity.burst": "1.4.1",
-        "com.unity.test-framework": "1.1.24"
-      },
-      "url": "https://packages.unity.com"
-    },
     "com.unity.burst": {
       "version": "1.8.13",
       "depth": 1,
@@ -374,7 +364,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.interaction.toolkit": {
-      "version": "2.5.3",
+      "version": "2.5.2",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -400,7 +390,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.xr.management": {
-      "version": "4.4.1",
+      "version": "4.4.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -413,7 +403,7 @@
     },
     "com.unity.xr.oculus": {
       "version": "4.2.0",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.xr.management": "4.4.0"

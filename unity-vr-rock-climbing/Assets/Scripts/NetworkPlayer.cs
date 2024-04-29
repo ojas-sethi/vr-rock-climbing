@@ -7,6 +7,7 @@ public class NetworkPlayer : NetworkBehaviour
 {
 	public Transform root;
 	public Transform head;
+	public Transform body;
 	public Transform leftHand;
 	public Transform rightHand;
 	
@@ -38,6 +39,9 @@ public class NetworkPlayer : NetworkBehaviour
 			
 			head.position = VRRigReferences.Singleton.head.position;
 			head.rotation = VRRigReferences.Singleton.head.rotation;
+
+			body.position = VRRigReferences.Singleton.head.position;
+			body.rotation = VRRigReferences.Singleton.head.rotation;
 			
 			leftHand.position = VRRigReferences.Singleton.leftHand.position;
 			leftHand.rotation = VRRigReferences.Singleton.leftHand.rotation;

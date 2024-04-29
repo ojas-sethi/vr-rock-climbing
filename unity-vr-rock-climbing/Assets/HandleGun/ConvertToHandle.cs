@@ -3,10 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using Unity.Netcode.Components;
 using Unity.Netcode;
+using Random = System.Random;
 
 public class ConvertToHandle : NetworkBehaviour
 {
-	public GameObject handle;
+	public GameObject[] handles;
+	private Random rd;
+	public int bulletOwner = 0;
+
+	void Start()
+	{
+		rd = new Random();
+	}
+
     void OnCollisionEnter(Collision col)
 	{
 		if(col.gameObject.tag == "Climbable")
@@ -16,16 +25,17 @@ public class ConvertToHandle : NetworkBehaviour
 			//Quaternion rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
 			//Transform position = contact.point;
 			//Vector3 colPos = contact.point;
-			if(IsOwner)
+			if(IsServer)
 			{
-				SpawnHandleServerRpc(contact.point);
+				SpawnHandle(contact.point);
 			}
 		}
 	}
 
-	[ServerRpc]
-	private void SpawnHandleServerRpc( Vector3 colPos)
+	private void SpawnHandle(Vector3 colPos)
 	{
+		int randInd = rd.Next(handles.Length);
+		GameObject handle = handles[randInd];
 		GameObject spawnedHandle = Instantiate(handle);
 		//spawnedHandle.transform.position =  col.transform.position;
 		spawnedHandle.transform.position =  colPos;

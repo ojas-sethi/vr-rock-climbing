@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GlobalObjectIdHash: 2106318127
+  InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -359,6 +360,18 @@ MonoBehaviour:
   bullet: {fileID: 7862377577173507552, guid: 1192fb1498ffa584aaf2d8af30721ff1, type: 3}
   spawnPoint: {fileID: 7863178343852928431}
   fireSpeed: 20
+  fire:
+    m_UseReference: 0
+    m_Action:
+      m_Name: Fire
+      m_Type: 0
+      m_ExpectedControlType: 
+      m_Id: 712d694a-472b-4f82-bdd3-d9215cbd9503
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Reference: {fileID: 0}
 --- !u!114 &-3566590966999468533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 048ca58c372172f4890f4ac03a805421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1

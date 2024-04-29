@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Anchor
   - Climbable
+  - Destroyable
+  - netPlayer
   layers:
   - Default
   - TransparentFX
@@ -14,9 +16,9 @@ TagManager:
   - Water
   - UI
   - 
+  - 
   - Player
   - Grabbable
-  - 
   - 
   - 
   - 

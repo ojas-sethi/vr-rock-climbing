@@ -928,7 +928,7 @@
                 {
                     "name": "Sprint",
                     "type": "Button",
-                    "id": "553c134b-a705-439c-b563-3981d11baaf1",
+                    "id": "104b1b2d-31c9-4ed5-bb8f-858189e1c063",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1026,7 +1026,7 @@
                 },
                 {
                     "name": "",
-                    "id": "507b225a-90d3-4a3c-9b55-0c08fa2450ed",
+                    "id": "b14464e0-a21f-4233-b820-575f1c3923a4",
                     "path": "<XRController>{LeftHand}/thumbstickClicked",
                     "interactions": "",
                     "processors": "",
@@ -1664,7 +1664,7 @@
                 {
                     "name": "Jump",
                     "type": "Button",
-                    "id": "25d54c67-1429-4f6b-b862-d76409ea97a3",
+                    "id": "02275400-187b-4e33-83a8-9ff0fd0342d6",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -1762,7 +1762,7 @@
                 },
                 {
                     "name": "",
-                    "id": "c1b77b12-3144-42b9-98fa-1ee57c5275b9",
+                    "id": "b16e7268-b881-4aec-a360-388fa9579105",
                     "path": "<XRController>{RightHand}/{PrimaryButton}",
                     "interactions": "",
                     "processors": "",
