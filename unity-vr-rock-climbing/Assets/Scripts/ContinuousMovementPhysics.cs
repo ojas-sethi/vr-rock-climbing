@@ -10,7 +10,7 @@ public class ContinuousMovementPhysics : MonoBehaviour
     public float turnSpeed = 60;
     public float jumpHeight = 1.5f;
 
-    private float jumpVelocity = 2;
+    public float jumpVelocity = 2;
 
     public bool onlyMoveIfGrounded = false;
     public bool jumpWithHand = true;
@@ -75,15 +75,15 @@ public class ContinuousMovementPhysics : MonoBehaviour
 
         if (inputJumpPressed && isGrounded )
         {
-            if (handSpeed > minJumpWithHandSpeed)
-            {
-                rb.velocity = Vector3.up * Mathf.Clamp(handSpeed, minJumpWithHandSpeed, maxJumpWithHandSpeed);
-            }
-            else
-            {
-                jumpVelocity = Mathf.Sqrt(2 * -Physics.gravity.y * jumpHeight);
+            //if (handSpeed > minJumpWithHandSpeed)
+            //{
+            //    rb.velocity = Vector3.up * Mathf.Clamp(handSpeed, minJumpWithHandSpeed, maxJumpWithHandSpeed);
+            //}
+            //else
+            //{
+                //jumpVelocity = Mathf.Sqrt(2 * -Physics.gravity.y * jumpHeight);
                 rb.velocity += Vector3.up * jumpVelocity;
-            }
+            //}
         }
 
     }

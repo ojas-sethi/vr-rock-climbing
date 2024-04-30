@@ -10,6 +10,8 @@ public class NetworkPlayer : NetworkBehaviour
 	public Transform body;
 	public Transform leftHand;
 	public Transform rightHand;
+
+	public float bodyYoffset;
 	
 	//
 	public Transform gun;
@@ -40,8 +42,10 @@ public class NetworkPlayer : NetworkBehaviour
 			head.position = VRRigReferences.Singleton.head.position;
 			head.rotation = VRRigReferences.Singleton.head.rotation;
 
-			body.position = VRRigReferences.Singleton.head.position;
-			body.rotation = VRRigReferences.Singleton.head.rotation;
+			body.position = new Vector3(VRRigReferences.Singleton.head.position.x, VRRigReferences.Singleton.head.position.y + bodyYoffset, VRRigReferences.Singleton.head.position.z);
+			//body.rotation = VRRigReferences.Singleton.head.rotation;
+			//body.rotation = new Quaternion(0,0, 0, VRRigReferences.Singleton.head.rotation.w);
+			body.rotation = Quaternion.Euler(0, VRRigReferences.Singleton.head.eulerAngles.y,0 );
 			
 			leftHand.position = VRRigReferences.Singleton.leftHand.position;
 			leftHand.rotation = VRRigReferences.Singleton.leftHand.rotation;

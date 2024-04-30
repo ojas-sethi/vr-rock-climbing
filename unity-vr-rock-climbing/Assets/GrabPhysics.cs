@@ -10,6 +10,7 @@ public class GrabPhysics : MonoBehaviour
 
     private FixedJoint fixedJoint;
     private bool isGrabbing = false;
+    private GameObject closestHandle;
 
     // Update is called once per frame
     void FixedUpdate()
@@ -37,6 +38,9 @@ public class GrabPhysics : MonoBehaviour
                     fixedJoint.connectedAnchor = transform.position;
                 }
 
+                closestHandle = nearbyColliders[0].gameObject;
+                closestHandle.GetComponent<ChangeColor>().Grabbed();
+
                 isGrabbing = true;
             }
         }
@@ -46,6 +50,7 @@ public class GrabPhysics : MonoBehaviour
 
             if(fixedJoint)
             {
+                closestHandle.GetComponent<ChangeColor>().UnGrabbed();
                 Destroy(fixedJoint);
             }
         }

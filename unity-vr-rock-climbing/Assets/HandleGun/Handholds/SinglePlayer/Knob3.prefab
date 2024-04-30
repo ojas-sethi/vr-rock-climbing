@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4974531730420244195}
   - component: {fileID: -1852888587848567043}
   - component: {fileID: 695436360213432741}
+  - component: {fileID: 5049621775679709911}
   m_Layer: 9
   m_Name: Knob3
   m_TagString: Destroyable
@@ -133,3 +134,17 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.0023495185
   m_Center: {x: -0.00006748526, y: 0.00023574347, z: 0.00036103255}
+--- !u!114 &5049621775679709911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3686500502593072457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70644b586c31dac4097ebc912626946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularColor: {r: 0.9803922, g: 0.46274513, b: 0.41960788, a: 0}
+  grabColor: {r: 1, g: 1, b: 0, a: 0}

@@ -21,7 +21,7 @@ public class FireBulletOnActivate : NetworkBehaviour
     {
 		//XRGrabInteractable grabbable = GetComponent<XRGrabInteractable>();
 		//gun.activated.AddListener(FireBullet);
-        
+        Shared_net.Value = true;
     }
 
     // Update is called once per frame

@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 6793144552317788271}
   - component: {fileID: 4939308800473579928}
   - component: {fileID: 1680399031598005187}
+  - component: {fileID: 8692738988351874847}
   m_Layer: 9
   m_Name: Knob1
-  m_TagString: Untagged
+  m_TagString: Destroyable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -200,3 +201,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8692738988351874847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2917169421666487998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70644b586c31dac4097ebc912626946f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  regularColor: {r: 0.61960787, g: 0.8196079, b: 0.45882356, a: 0}
+  grabColor: {r: 1, g: 1, b: 0, a: 0}
