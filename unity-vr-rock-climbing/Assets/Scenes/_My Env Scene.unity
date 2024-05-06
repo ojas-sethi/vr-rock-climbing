@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.06743167, g: 0.29716447, b: 0.76780784, a: 1}
+  m_IndirectSpecularColor: {r: 0.07834544, g: 0.32755858, b: 0.7621089, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -6579,6 +6579,73 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 221273973}
   m_CullTransparentMesh: 1
+--- !u!1 &222382887
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 222382888}
+  - component: {fileID: 222382890}
+  - component: {fileID: 222382889}
+  m_Layer: 0
+  m_Name: FireworkTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &222382888
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222382887}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.5, y: 37.63, z: -9.07}
+  m_LocalScale: {x: 7.75, y: 2.9279613, z: 11.608}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 226540780}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &222382889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222382887}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ade30dcbc428549b5b35edacab774f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firework: {fileID: 7750853977139984564, guid: 6a7b26737f4a19a40b5f385c66dc96a9, type: 3}
+--- !u!65 &222382890
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222382887}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 567
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &224610363 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1576488453971394810, guid: a778b631c6253a04899cb31bad047c81, type: 3}
@@ -6609,6 +6676,11 @@ MeshCollider:
 --- !u!1 &226540779 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6391971309939568311, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
+  m_PrefabInstance: {fileID: 561647217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &226540780 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6468124786309188450, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
   m_PrefabInstance: {fileID: 561647217}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &227615043 stripped
@@ -6746,6 +6818,11 @@ Transform:
 --- !u!1 &233289109 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5976375494955004144, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
+  m_PrefabInstance: {fileID: 561647217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &233289110 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5224117642748435422, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
   m_PrefabInstance: {fileID: 561647217}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &234412960 stripped
@@ -17473,7 +17550,10 @@ PrefabInstance:
     - {fileID: 3903416663692677033, guid: adad1233ea9dcde4589eea643a34c799, type: 3}
     - {fileID: 7559587491977245761, guid: adad1233ea9dcde4589eea643a34c799, type: 3}
     - {fileID: 4825049040982317377, guid: adad1233ea9dcde4589eea643a34c799, type: 3}
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 2629462342004082274, guid: adad1233ea9dcde4589eea643a34c799, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 930472596}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 1515085076321475084, guid: adad1233ea9dcde4589eea643a34c799, type: 3}
       insertIndex: -1
@@ -22464,7 +22544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976375494955004144, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5976375494955004144, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
       propertyPath: m_TagString
@@ -23401,6 +23481,18 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7162723130872014796, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
       insertIndex: -1
       addedObject: {fileID: 514779973}
+    - targetCorrespondingSourceObject: {fileID: 3372506411493194084, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2003233618}
+    - targetCorrespondingSourceObject: {fileID: 6468124786309188450, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 222382888}
+    - targetCorrespondingSourceObject: {fileID: 2954510268026661993, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1258583662}
+    - targetCorrespondingSourceObject: {fileID: 5224117642748435422, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1279296914}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4622439429356163891, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
       insertIndex: -1
@@ -30360,6 +30452,73 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 2394812760364000289, guid: 70a19305ce085874a8c6fa1712221352, type: 3}
+--- !u!1 &772033687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 772033688}
+  - component: {fileID: 772033690}
+  - component: {fileID: 772033689}
+  m_Layer: 0
+  m_Name: FireworkTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &772033688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772033687}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.37, y: 1.28, z: 0.58}
+  m_LocalScale: {x: 6.756898, y: 2.55, z: 10.03781}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1677957199}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &772033689
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772033687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ade30dcbc428549b5b35edacab774f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firework: {fileID: 7750853977139984564, guid: 6a7b26737f4a19a40b5f385c66dc96a9, type: 3}
+--- !u!65 &772033690
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 772033687}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 567
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &773224736
 GameObject:
   m_ObjectHideFlags: 0
@@ -33964,6 +34123,73 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!1 &930472595
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 930472596}
+  - component: {fileID: 930472598}
+  - component: {fileID: 930472597}
+  m_Layer: 0
+  m_Name: FireworkTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &930472596
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930472595}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 19.44, y: 59.01, z: -41.8}
+  m_LocalScale: {x: 27.725, y: 9.15, z: 25.433}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 514779973}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &930472597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930472595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ade30dcbc428549b5b35edacab774f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firework: {fileID: 7750853977139984564, guid: 6a7b26737f4a19a40b5f385c66dc96a9, type: 3}
+--- !u!65 &930472598
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 930472595}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 567
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &932385895
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41941,6 +42167,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 81115963ecc84ca41aea6e7aa126e57d, type: 2}
+--- !u!4 &1223255096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3372506411493194084, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
+  m_PrefabInstance: {fileID: 561647217}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1224349838
 GameObject:
   m_ObjectHideFlags: 0
@@ -43024,6 +43255,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7405846476849834440, guid: c6308cb7062fac34e8e50600086b12a1, type: 3}
   m_PrefabInstance: {fileID: 1258192738}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1258583661
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1258583662}
+  - component: {fileID: 1258583664}
+  - component: {fileID: 1258583663}
+  m_Layer: 0
+  m_Name: FireworkTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1258583662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258583661}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.016627064, z: -0, w: 0.99986184}
+  m_LocalPosition: {x: 9, y: 3962, z: 118}
+  m_LocalScale: {x: 362.65344, y: 422.96524, z: 455.18295}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1287687731}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1258583663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258583661}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ade30dcbc428549b5b35edacab774f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firework: {fileID: 7750853977139984564, guid: 6a7b26737f4a19a40b5f385c66dc96a9, type: 3}
+--- !u!65 &1258583664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1258583661}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 567
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1259891285
 GameObject:
   m_ObjectHideFlags: 0
@@ -43386,6 +43684,73 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5060444177187149915, guid: 44ef80c52cd185540bd7e9d6cc15ae18, type: 3}
+--- !u!1 &1279296913
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1279296914}
+  - component: {fileID: 1279296916}
+  - component: {fileID: 1279296915}
+  m_Layer: 0
+  m_Name: FireworkTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1279296914
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279296913}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.24, y: 28.26, z: 5.69}
+  m_LocalScale: {x: 5.4333, y: 3.4167, z: 2.95}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 233289110}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1279296915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279296913}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ade30dcbc428549b5b35edacab774f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firework: {fileID: 7750853977139984564, guid: 6a7b26737f4a19a40b5f385c66dc96a9, type: 3}
+--- !u!65 &1279296916
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1279296913}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 567
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1284453946
 GameObject:
   m_ObjectHideFlags: 0
@@ -43552,6 +43917,11 @@ Transform:
 --- !u!1 &1287687730 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2620510181075010585, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
+  m_PrefabInstance: {fileID: 561647217}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1287687731 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2954510268026661993, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
   m_PrefabInstance: {fileID: 561647217}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1289244329
@@ -54943,6 +55313,7 @@ Transform:
   - {fileID: 578139608}
   - {fileID: 675529899}
   - {fileID: 1609653205}
+  - {fileID: 772033688}
   m_Father: {fileID: 542963347}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1679492116
@@ -63199,6 +63570,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5440707293445741943, guid: 494f6d43e170e9145bc7865d243ee00b, type: 3}
   m_PrefabInstance: {fileID: 2002327568}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2003233617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2003233618}
+  - component: {fileID: 2003233620}
+  - component: {fileID: 2003233619}
+  m_Layer: 0
+  m_Name: FireworkTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2003233618
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003233617}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.60000014, y: 1.47, z: -3.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1223255096}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2003233619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003233617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6ade30dcbc428549b5b35edacab774f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firework: {fileID: 7750853977139984564, guid: 6a7b26737f4a19a40b5f385c66dc96a9, type: 3}
+--- !u!65 &2003233620
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2003233617}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 256
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 567
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!64 &2005434796
 MeshCollider:
   m_ObjectHideFlags: 0
