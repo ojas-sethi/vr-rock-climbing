@@ -11,6 +11,8 @@ public class spawnFireworks : MonoBehaviour
         Debug.Log("Spawn Firework");
         GameObject spawnedFirework = Instantiate(firework);
         spawnedFirework.transform.position = gameObject.transform.position;
+        AudioSource firework_audio = GetComponent<AudioSource>();
+        firework_audio.Play();
         Destroy(spawnedFirework, 10);
     }
 }
