@@ -15,6 +15,7 @@ public class FireBulletOnActivate : NetworkBehaviour
 	public InputActionProperty fire;
 	public bool Shared = true;
 	public NetworkVariable<bool> Shared_net = new NetworkVariable<bool>();
+	public AudioSource sfx;
 	
     // Start is called before the first frame update
     void Start()
@@ -72,6 +73,10 @@ public class FireBulletOnActivate : NetworkBehaviour
 		spawnedBullet.transform.position = bulletPosition;
 		spawnedBullet.GetComponent<Rigidbody>().isKinematic = false;
 		spawnedBullet.GetComponent<Rigidbody>().velocity = gunForward * fireSpeed;
+		if (sfx != null)
+        {
+            sfx.Play();
+        }
 		Destroy(spawnedBullet, 5);
 		//Destroy(gameObject);		
 	}

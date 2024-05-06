@@ -12,6 +12,19 @@ public class GrabPhysics : MonoBehaviour
     private bool isGrabbing = false;
     private GameObject closestHandle;
 
+
+    // -------------------------sfx
+    public float minDownwardSpeed = 5f;
+    public AudioSource audioSource;
+    public List<AudioClip> soundEffects = new List<AudioClip>();
+
+    private Rigidbody rb;
+    private bool isMovingDownward = false;
+    public float minDelayBetweenEffects = 1f; // Minimum delay between playing effects
+    private bool canPlayEffect = true; // Flag to check if an effect can be played
+
+    // --------------------/sfx
+
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -55,4 +68,37 @@ public class GrabPhysics : MonoBehaviour
             }
         }
     }
+
+//------------------------sfx
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void Update()
+    {
+        if (rb.velocity.y < -minDownwardSpeed && !isMovingDownward && canPlayEffect && isGrabbing)
+        {
+            isMovingDownward = true;
+            StartCoroutine(PlayRandomSoundWithDelay());
+        }
+        else if (rb.velocity.y >= -minDownwardSpeed && isMovingDownward)
+        {
+            isMovingDownward = false;
+        }
+    }
+
+    IEnumerator PlayRandomSoundWithDelay()
+    {
+        if (soundEffects.Count > 0)
+        {
+            int randomIndex = Random.Range(0, soundEffects.Count);
+            audioSource.PlayOneShot(soundEffects[randomIndex]);
+        }
+
+        canPlayEffect = false; // Set flag to prevent playing effects until the delay is over
+        yield return new WaitForSeconds(minDelayBetweenEffects);
+        canPlayEffect = true; // Reset flag to allow playing effects again
+    }
+//---------------------/sfx
 }
