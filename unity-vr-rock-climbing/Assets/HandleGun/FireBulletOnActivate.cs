@@ -57,6 +57,10 @@ public class FireBulletOnActivate : NetworkBehaviour
 		//var clientId = serverRpcParams.Receive.SenderClientId;
 		//Debug.Log(clientId);
 		GameObject spawnedBullet = Instantiate(mBullet);
+		if (sfx != null)
+        {
+            sfx.Play();
+        }
 		spawnedBullet.transform.position = bulletPosition;
 		//spawnedBullet.GetComponent<ConvertToHandle>().bulletOwner = (int) clientId;
 		spawnedBullet.GetComponent<Rigidbody>().isKinematic = false;
@@ -73,10 +77,7 @@ public class FireBulletOnActivate : NetworkBehaviour
 		spawnedBullet.transform.position = bulletPosition;
 		spawnedBullet.GetComponent<Rigidbody>().isKinematic = false;
 		spawnedBullet.GetComponent<Rigidbody>().velocity = gunForward * fireSpeed;
-		if (sfx != null)
-        {
-            sfx.Play();
-        }
+		
 		Destroy(spawnedBullet, 5);
 		//Destroy(gameObject);		
 	}

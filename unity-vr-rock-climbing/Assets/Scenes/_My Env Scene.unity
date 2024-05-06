@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.07834544, g: 0.32755858, b: 0.7621089, a: 1}
+  m_IndirectSpecularColor: {r: 0.06743167, g: 0.29716447, b: 0.76780784, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -22544,7 +22544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5976375494955004144, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5976375494955004144, guid: aa06367d6aee73f4c8cd16d4d0e01421, type: 3}
       propertyPath: m_TagString
@@ -33120,11 +33120,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1604741675571263500, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 1604741675571263500, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2592336607360963843, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_text
@@ -33136,7 +33136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -33148,7 +33148,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -33162,6 +33162,10 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
       objectReference: {fileID: 1847605478}
+    - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 6222697429348756319, guid: 3541e5d6e6dab5f4caf6f50808cf0270, type: 3}
     - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
@@ -33187,6 +33191,10 @@ PrefabInstance:
       value: set_volume
       objectReference: {fileID: 0}
     - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
+      value: set_isStatic
+      objectReference: {fileID: 0}
+    - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: UnityEngine.AudioSource, UnityEngine
       objectReference: {fileID: 0}
@@ -33196,7 +33204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: UnityEngine.AudioSource, UnityEngine
+      value: UnityEngine.GameObject, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -33206,17 +33214,21 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 2688414673571721673, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8046343683304592715, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8046343683304592715, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8046343683304592715, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 0.45
       objectReference: {fileID: 0}
     - target: {fileID: 8505255599064506868, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_Name
@@ -33224,7 +33236,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8505255599064506868, guid: 6d9a18bdd38d6a4488496b713c183257, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -260,7 +260,7 @@ MonoBehaviour:
       m_SingletonActionBindings: []
       m_Flags: 0
     m_Reference: {fileID: 0}
-  sfx: {fileID: 0}
+  sfx: {fileID: 8479104728378683308}
 --- !u!82 &8479104728378683308
 AudioSource:
   m_ObjectHideFlags: 0
@@ -272,7 +272,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3c0673c7c44689c46aafb5ca153a11f6, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0

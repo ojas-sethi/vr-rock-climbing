@@ -707,6 +707,10 @@ PrefabInstance:
       propertyPath: fire.m_Action.m_Name
       value: Fire
       objectReference: {fileID: 0}
+    - target: {fileID: 8479104728378683308, guid: d8de0085708bce64f872716e979d71ee, type: 3}
+      propertyPath: m_Volume
+      value: 0.037
+      objectReference: {fileID: 0}
     - target: {fileID: 8526883787274934956, guid: d8de0085708bce64f872716e979d71ee, type: 3}
       propertyPath: m_Name
       value: pistol
@@ -801,6 +805,12 @@ MonoBehaviour:
   Shared: 1
   Shared_net:
     m_InternalValue: 0
+  sfx: {fileID: 2772148234524970054}
+--- !u!82 &2772148234524970054 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8479104728378683308, guid: d8de0085708bce64f872716e979d71ee, type: 3}
+  m_PrefabInstance: {fileID: 6040297909945033706}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4865393566651395037 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1177176018074781751, guid: d8de0085708bce64f872716e979d71ee, type: 3}
